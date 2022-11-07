@@ -1,0 +1,29 @@
+{
+  "name": "cursonodejs_proyecto_cafe",
+  "version": "1.0.0",
+  "description": "Este proyecto incluye desde la sección 9 hasta la sección 13 de curso de NodeJs.",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/julietaorbaraacc/CursoNodeJs_Proyecto_Cafe.git"
+  },
+  "author": "Julieta Orbara",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/julietaorbaraacc/CursoNodeJs_Proyecto_Cafe/issues"
+  },
+  "homepage": "https://github.com/julietaorbaraacc/CursoNodeJs_Proyecto_Cafe#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-validator": "^6.14.2",
+    "mongoose": "^6.7.1"
+  }
+}
