@@ -38,7 +38,8 @@ const usuarioSchema = Schema({
 //Este metodo se ejecuta cuando devuelvo el request en un jscon en el archivo user.js dentro de controllers
 usuarioSchema.methods.toJSON = function () {
 	//Con esta linea lo que hacemos con desestructuracion guardar todos los valores en usuario menos password y __V, entonces asi retornamos solo los valores que queremos
-	const { __v, password, ...usuario } = this.toObject();
+	const { __v, password, _id, ...usuario } = this.toObject();
+	usuario.uid = _id; //con esto cambiamos _id a uid
 	return usuario;
 };
 

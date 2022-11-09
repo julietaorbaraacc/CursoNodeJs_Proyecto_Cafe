@@ -1,6 +1,7 @@
 //Externo
 import { Schema, model } from "mongoose";
 
+//Definimos que va a contener el rol
 const roleSchema = Schema({
 	role: {
 		type: String,
