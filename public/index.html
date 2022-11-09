@@ -27,7 +27,7 @@
 			const body = { id_token: response.credential }
 
 			//Con fetch trabajamos a modo de promesa, le indicamos la url, el metodo los header y en el body le seteamos el valor que nos trajimos de la api
-			fetch("http://localhost:8080/api/auth/google", {
+			fetch(window.location.hostname.includes('localhost') ? 'http://localhost:8080/api/auth/google' : 'https://curso-node-proyecto-cafe-jo.herokuapp.com/api/auth/google', {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json"
