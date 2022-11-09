@@ -4,7 +4,7 @@ import { Router } from 'express';
 import { check } from 'express-validator';
 
 //Interno
-import { login } from '../controllers/auth.js';
+import { googleSignIn, login } from '../controllers/auth.js';
 import { validarCampos } from '../middlewares/validar-campos.js';
 
 const routerAuth = Router();
@@ -14,6 +14,12 @@ routerAuth.post("/login", [
 	check("password", "El password es obligatorio").not().isEmpty(),
 	validarCampos
 ], login);
+
+//Creamos la authenticacion de Google
+routerAuth.post("/google", [
+	check("id_token", "El token de google es necesario.").not().isEmpty(),
+	validarCampos
+], googleSignIn);
 
 export {
 	routerAuth
