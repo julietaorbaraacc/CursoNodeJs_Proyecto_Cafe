@@ -1,5 +1,10 @@
-import { Role } from '../models/role.js';
-import { Usuario } from "../models/usuario.js";
+//Interno
+import {
+	Categoria,
+	Producto,
+	Role,
+	Usuario
+} from "../models/index.js";
 
 //Chequeamos que el rol sea un rol valido de la base de datos
 const rolValido = async (role = "") => {
@@ -28,8 +33,28 @@ const usuarioExistePorID = async (id) => {
 	}
 }
 
+//Chequeamos que la categoria exista en la base de datos
+const existeCategoriaPorID = async (id) => {
+	const existeCategoria = await Categoria.findById(id); //esto va a buscar una categoria que sea igual al que le estoy pasando
+
+	if (!existeCategoria) {
+		throw new Error(`La categoria ${id} no existe.`);
+	}
+}
+
+//Chequeamos que el producto exista en la base de datos
+const existeProductoPorID = async (id) => {
+	const existeProducto = await Producto.findById(id); //esto va a buscar una categoria que sea igual al que le estoy pasando
+
+	if (!existeProducto) {
+		throw new Error(`El producto ${id} no existe.`);
+	}
+}
+
 export {
 	rolValido,
 	emailExiste,
-	usuarioExistePorID
+	usuarioExistePorID,
+	existeCategoriaPorID,
+	existeProductoPorID
 }

@@ -1,3 +1,4 @@
+//Externo
 import { validationResult } from 'express-validator';
 
 //Este middleware es para manejar los errores que vienen del response

@@ -4,8 +4,11 @@ import { Router } from 'express';
 import { check } from 'express-validator';
 
 //Interno
-import { googleSignIn, login } from '../controllers/auth.js';
-import { validarCampos } from '../middlewares/validar-campos.js';
+import {
+	googleSignIn,
+	login
+} from '../controllers/index.js';
+import { validarCampos } from '../middlewares/index.js';
 
 const routerAuth = Router();
 

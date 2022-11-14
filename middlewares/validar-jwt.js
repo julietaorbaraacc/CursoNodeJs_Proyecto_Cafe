@@ -2,7 +2,7 @@
 import jsonwebtoken from "jsonwebtoken";
 
 //Interno
-import { Usuario } from "../models/usuario.js";
+import { Usuario } from "../models/index.js";
 
 const validarJWT = async (req, res, next) => {
 	//Tomamos el token del header

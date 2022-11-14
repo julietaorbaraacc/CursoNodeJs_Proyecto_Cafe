@@ -2,9 +2,11 @@
 import bcryptjs from "bcryptjs";
 
 //Interno
-import { Usuario } from "../models/usuario.js";
-import { generarJWT } from "../helpers/generar-jwt.js";
-import { googleVerify } from "../helpers/google-verify.js";
+import { Usuario } from "../models/index.js";
+import {
+	generarJWT,
+	googleVerify
+} from "../helpers/index.js";
 
 const login = async (req, res) => {
 	const { correo, password } = req.body;

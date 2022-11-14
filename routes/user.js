@@ -9,14 +9,12 @@ import {
 	usersPut,
 	usersPost,
 	usersDelete
-} from '../controllers/user.js';
-
+} from '../controllers/index.js';
 import {
 	emailExiste,
 	rolValido,
 	usuarioExistePorID
-} from '../helpers/db-validators.js';
-
+} from '../helpers/index.js';
 import {
 	validarCampos,
 	validarJWT,

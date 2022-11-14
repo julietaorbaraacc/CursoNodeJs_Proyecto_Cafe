@@ -2,7 +2,7 @@
 import bcryptjs from "bcryptjs";
 
 //Interno
-import { Usuario } from "../models/usuario.js";
+import { Usuario } from "../models/index.js";
 
 //Creamos las funciones
 

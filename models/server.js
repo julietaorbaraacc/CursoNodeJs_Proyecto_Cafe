@@ -3,9 +3,14 @@ import express from 'express';
 import cors from 'cors';
 
 //Interno
-import { routerUser } from '../routes/user.js';
-import { routerAuth } from '../routes/auth.js';
 import { dbConnection } from '../database/config.js';
+import {
+	routerAuth,
+	routerCat,
+	routerProd,
+	routerSearch,
+	routerUser
+} from '../routes/index.js';
 
 //Creamos la clase Server en donde vamos a poner todas las configuraciones necesarias para servir el contenido
 class Server {
@@ -13,14 +18,22 @@ class Server {
 		//Seteamos 
 		this.app = express();
 		this.port = process.env.PORT;
-		this.usersPath = "/api/users";
-		this.authPath = "/api/auth";
+
+		this.paths = {
+			auth: "/api/auth",
+			search: "/api/search",
+			categories: "/api/categories",
+			products: "/api/products",
+			users: "/api/users"
+		}
 
 		//Conectar a la base de datos
 		this.conectarDB();
 
-		//Lamamos
+		//Middlewares
 		this.middlewares();
+
+		//Rutas de conexión
 		this.routes();
 	}
 
@@ -42,8 +55,11 @@ class Server {
 
 	routes() {
 		//Lamamos la ruta del constructor y los callback de router
-		this.app.use(this.usersPath, routerUser);
-		this.app.use(this.authPath, routerAuth);
+		this.app.use(this.paths.auth, routerAuth);
+		this.app.use(this.paths.search, routerSearch);
+		this.app.use(this.paths.categories, routerCat);
+		this.app.use(this.paths.users, routerUser);
+		this.app.use(this.paths.products, routerProd);
 	}
 
 	listen() {
