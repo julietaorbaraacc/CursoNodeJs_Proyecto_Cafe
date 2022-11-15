@@ -4,10 +4,12 @@ import {
 	adminRole,
 	tieneRole
 } from './validar-roles.js';
+import { validarArchivoSubir } from "./validar-archivo.js"
 
 export {
 	validarCampos,
 	validarJWT,
 	adminRole,
-	tieneRole
+	tieneRole,
+	validarArchivoSubir
 }
