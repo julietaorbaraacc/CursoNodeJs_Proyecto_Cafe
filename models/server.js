@@ -48,6 +48,10 @@ class Server {
 	middlewares() {
 		//CORS
 		this.app.use(cors());
+		this.app.use((req, res, next) => {
+			res.header("Access-Control-Allow-Origin", "*");
+			next();
+		});
 
 		//Lectura y parseo del body, aca leemos la data que nos estan enviando
 		this.app.use(express.json());
